@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <div class="sidebar">
+        <h1>calm luh sketch etcher</h1>
+        <p>hold right click to suppress draw</p>
+        <button class="reset">Reset</button>
+        <input type="range" name="size-input" id="size-input" min="4" max="100">
+        <p>dimensions: <output class="size"></output>x<output class="size"></output></p>
+        <button class="change-dimension">Change Dimensions</button>
+    </div>
+    
     <div class="container"></div>
 </body>
 </html>

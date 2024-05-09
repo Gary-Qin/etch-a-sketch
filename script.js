@@ -1,8 +1,22 @@
 const container = document.querySelector(".container");
+const resetButton = document.querySelector(".reset");
+const dimensionButton = document.querySelector(".change-dimension");
+const dimensionSlider = document.querySelector("#size-input");
+const dimensionValue = document.querySelectorAll(".size");
+let tiles;
 
-container.addEventListener("load", fillGrid(16));
+container.addEventListener("load", setGrid(16));
+resetButton.addEventListener("click", () => clearGrid());
+dimensionButton.addEventListener("click", () => removeGrid());
 
-function fillGrid(num) {
+dimensionValue.forEach(node => {node.textContent = dimensionSlider.value})
+dimensionSlider.addEventListener("input", (e) => {
+    dimensionValue.forEach(node => {
+        node.textContent = e.target.value;
+    })
+})
+
+function setGrid(num) {
     console.log(num);
 
     const containerWidth = container.offsetWidth - 6;
@@ -15,7 +29,7 @@ function fillGrid(num) {
         const tile = document.createElement("div");
         tile.className = "tile";
         tile.setAttribute("style", 
-            `background-color:#0047F0;
+            `background-color:#FFFFFF;
             width:${containerWidth / num}px;
             height:${containerHeight / num}px;`);
         tile.addEventListener("mouseover", () => {
@@ -26,4 +40,18 @@ function fillGrid(num) {
         })
         container.appendChild(tile);
     }
+    tiles = document.querySelectorAll(".tile");
+    console.log(tiles);
+}
+
+function clearGrid() {
+    console.log("Reset");
+    tiles.forEach(tile => {
+        tile.style.backgroundColor = "#FFFFFF";
+    });
+}
+
+function removeGrid() {
+    container.replaceChildren();
+    setGrid(dimensionSlider.value);
 }
