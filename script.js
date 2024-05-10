@@ -13,10 +13,10 @@ document.body.onkeydown = function() {
 document.body.onkeyup = function() {
     penUp();
 }
-document.body.onmousedown = function() { 
+document.body.touchstart = function() { 
     penDown(tiles, colourPicker.value);
 }
-document.body.onmouseup = function() { 
+document.body.touchend = function() { 
     penUp();
 }
 
@@ -36,8 +36,8 @@ dimensionSlider.addEventListener("input", (e) => {
 })
 
 function setGrid(num) {
-    const containerWidth = container.offsetWidth - 6;
-    const containerHeight = container.offsetHeight - 6;
+    const containerWidth = container.offsetWidth - 7;
+    const containerHeight = container.offsetHeight - 7;
 
     for(let i = 0; i < num ** 2; i++) {
         const tile = document.createElement("div");
@@ -54,6 +54,9 @@ function setGrid(num) {
 function penDown(tiles, colour) {
     tiles.forEach(tile => {
         tile.addEventListener("mouseover", () => {
+            tile.style.backgroundColor = colour;
+        })
+        tile.addEventListener("mousemove", () => {
             tile.style.backgroundColor = colour;
         })
     })

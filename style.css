@@ -57,4 +57,9 @@ button {
     button {
         margin-bottom: 20px;
     }
+
+    .container {
+        width: 70vw;
+        height: 70vw;
+    }
 }
