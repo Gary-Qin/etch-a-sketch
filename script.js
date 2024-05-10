@@ -12,8 +12,8 @@ document.body.onkeydown = function() {
 document.body.onkeyup = function() {
     penUp();
 }
-container.addEventListener("touchstart", () => alert("hello"));
-container.addEventListener("touchend", () => alert("bye"));
+container.addEventListener("touchstart", () => penDown(tiles, colourPicker.value));
+container.addEventListener("touchend", () => penUp());
 
 
 container.addEventListener("load", setGrid(16));
