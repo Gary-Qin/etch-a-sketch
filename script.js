@@ -13,12 +13,9 @@ document.body.onkeydown = function() {
 document.body.onkeyup = function() {
     penUp();
 }
-document.body.ontouchstart = function() { 
-    penDown(tiles, colourPicker.value);
-}
-document.body.ontouchend = function() { 
-    penUp();
-}
+document.body.addEventListener("touchstart", () => penDown(tiles, colourPicker.value));
+document.body.addEventListener("touchend", () => penUp());
+
 
 container.addEventListener("load", setGrid(16));
 resetButton.addEventListener("click", () => clearGrid());
