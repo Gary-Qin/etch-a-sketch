@@ -6,15 +6,14 @@ const colourPicker = document.querySelector("#pen");
 const dimensionValue = document.querySelectorAll(".size");
 let tiles;
 
-let mouseDown = 0;
 document.body.onkeydown = function() { 
     penDown(tiles, colourPicker.value);
 }
 document.body.onkeyup = function() {
     penUp();
 }
-document.body.addEventListener("touchstart", () => penDown(tiles, colourPicker.value));
-document.body.addEventListener("touchend", () => penUp());
+document.body.addEventListener("touchstart", () => alert("hello"));
+document.body.addEventListener("touchend", () => alert("bye"));
 
 
 container.addEventListener("load", setGrid(16));
