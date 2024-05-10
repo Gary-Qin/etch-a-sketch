@@ -13,10 +13,10 @@ document.body.onkeydown = function() {
 document.body.onkeyup = function() {
     penUp();
 }
-document.body.touchstart = function() { 
+document.body.ontouchstart = function() { 
     penDown(tiles, colourPicker.value);
 }
-document.body.touchend = function() { 
+document.body.ontouchend = function() { 
     penUp();
 }
 
