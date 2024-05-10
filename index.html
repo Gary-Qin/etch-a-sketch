@@ -10,11 +10,13 @@
 <body>
     <div class="sidebar">
         <h1>calm luh sketch etcher</h1>
-        <p>hold right click to suppress draw</p>
+        <p>hold any key to draw</p>
         <button class="reset">Reset</button>
-        <input type="range" name="size-input" id="size-input" min="4" max="100">
+        <input type="range" name="size-input" id="size-input" min="4" max="100" value="16">
         <p>dimensions: <output class="size"></output>x<output class="size"></output></p>
         <button class="change-dimension">Change Dimensions</button>
+        <input type="color" name="pen" id="pen" value="#000000">
+        <label for="pen">pen colour</label>
     </div>
     
     <div class="container"></div>
