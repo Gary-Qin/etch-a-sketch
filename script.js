@@ -8,9 +8,15 @@ let tiles;
 
 let mouseDown = 0;
 document.body.onkeydown = function() { 
-    penDown(tiles, colourPicker.value)
+    penDown(tiles, colourPicker.value);
 }
 document.body.onkeyup = function() {
+    penUp();
+}
+document.body.onmousedown = function() { 
+    penDown(tiles, colourPicker.value);
+}
+document.body.onmouseup = function() { 
     penUp();
 }
 

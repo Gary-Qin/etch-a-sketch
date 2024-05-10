@@ -1,6 +1,14 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 html, body {
     margin: 0;
-    height: 100%; 
+    height: 100%;
 }
 
 body {
@@ -35,4 +43,18 @@ p {
 
 button {
     margin-bottom: 40px;
+}
+
+@media (max-width: 576px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .instruction {
+        opacity: 0%;
+    }
+    
+    button {
+        margin-bottom: 20px;
+    }
 }
