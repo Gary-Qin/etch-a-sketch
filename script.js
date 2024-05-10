@@ -12,8 +12,8 @@ document.body.onkeydown = function() {
 document.body.onkeyup = function() {
     penUp();
 }
-document.body.addEventListener("touchstart", () => alert("hello"));
-document.body.addEventListener("touchend", () => alert("bye"));
+container.addEventListener("touchstart", () => alert("hello"));
+container.addEventListener("touchend", () => alert("bye"));
 
 
 container.addEventListener("load", setGrid(16));
