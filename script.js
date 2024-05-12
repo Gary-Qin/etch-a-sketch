@@ -12,8 +12,7 @@ document.body.onkeydown = function() {
 document.body.onkeyup = function() {
     penUp();
 }
-container.addEventListener("touchstart", () => penDown(tiles, colourPicker.value));
-container.addEventListener("touchend", () => penUp());
+
 
 
 container.addEventListener("load", setGrid(16));
@@ -45,6 +44,14 @@ function setGrid(num) {
         container.appendChild(tile);
     }
     tiles = document.querySelectorAll(".tile");
+    tiles.forEach(tile => {
+        tile.addEventListener("touchstart", () => {
+            tile.style.backgroundColor = colourPicker.value;
+        })
+        tile.addEventListener("touchmove", () => {
+            tile.style.backgroundColor = colourPicker.value;
+        })
+    })
 }
 
 function penDown(tiles, colour) {
@@ -60,7 +67,6 @@ function penDown(tiles, colour) {
 }
 
 function penUp() {
-    // tiles = document.querySelectorAll(".tile");
     tiles.forEach(tile => {
         const oldTile = tile;
         const newTile = oldTile.cloneNode(true);
